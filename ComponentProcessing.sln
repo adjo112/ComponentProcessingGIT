@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32407.337
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComponentProcessing", "ComponentProcessing\ComponentProcessing.csproj", "{E27EC851-09D9-451B-9A80-6C16D966FEAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComponentProcessing", "ComponentProcessing\ComponentProcessing.csproj", "{E27EC851-09D9-451B-9A80-6C16D966FEAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComponentProcessingTests", "ComponentProcessingTests\ComponentProcessingTests.csproj", "{CDDFC428-4681-4EF7-91D0-01502ECAF7BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{E27EC851-09D9-451B-9A80-6C16D966FEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E27EC851-09D9-451B-9A80-6C16D966FEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E27EC851-09D9-451B-9A80-6C16D966FEAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDDFC428-4681-4EF7-91D0-01502ECAF7BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDDFC428-4681-4EF7-91D0-01502ECAF7BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDDFC428-4681-4EF7-91D0-01502ECAF7BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDDFC428-4681-4EF7-91D0-01502ECAF7BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
