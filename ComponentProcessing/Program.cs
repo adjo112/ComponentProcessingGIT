@@ -24,3 +24,11 @@ namespace ComponentProcessing
                 });
     }
 }
+
+
+/*
+ "ConnectionStrings": {
+    "conString": "Server=DESKTOP-NPNKLPC;Database=TestCompProcess;Trusted_Connection=True;"
+  },
+ 
+ */
