@@ -16,7 +16,7 @@ namespace ComponentProcessingTests
         [SetUp]
         public void Setup()
         {
-            //RequestId UserName ProcessingCharge PackagingAndDeliveryCharge DateOfDelivery TotalCharge CreditCardNo        
+                  
            
 
         }
