@@ -26,19 +26,22 @@ namespace ComponentProcessing.DL
                 {
                     res.ProcessingCharge = Price.PriorityRepair * value.Quantity;
 
-                    res.DateOfDelivery = value.OrderPlacedDate.AddDays(2);
+                    // res.DateOfDelivery = value.OrderPlacedDate.AddDays(2);
+                    res.DateOfDelivery = DateTime.Now.AddDays(2);
                 }
                 else if (value.IsPriorityRequest == false && value.ComponentName.Trim().ToUpper() == "REPAIR")
                 {
                     res.ProcessingCharge = Price.NoPriorityRepair * value.Quantity;
 
-                    res.DateOfDelivery = value.OrderPlacedDate.AddDays(5);
+                    // res.DateOfDelivery = value.OrderPlacedDate.AddDays(5);
+                    res.DateOfDelivery = DateTime.Now.AddDays(5);
                 }
                 else
                 {
                     res.ProcessingCharge = Price.Replacement * value.Quantity;
 
-                    res.DateOfDelivery = value.OrderPlacedDate.AddDays(5);
+                    // res.DateOfDelivery = value.OrderPlacedDate.AddDays(5);
+                    res.DateOfDelivery = DateTime.Now.AddDays(5);
                 }
                 res.TotalCharge = res.ProcessingCharge + res.PackagingAndDeliveryCharge;
             }
