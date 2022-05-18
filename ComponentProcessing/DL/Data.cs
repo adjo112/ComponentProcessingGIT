@@ -100,10 +100,10 @@ namespace ComponentProcessing.DL
                 }
 
                 responseValue = response.Content.ReadAsStringAsync().Result;
-
+                int y = Int32.Parse(responseValue);
             }
             catch (Exception e) {
-
+                return null;
                 //    _log4net.Error("Exception Occured" + e);
             }
 
@@ -153,6 +153,7 @@ namespace ComponentProcessing.DL
 
             catch (Exception e)
             {
+                return -500;
                 //    _log4net.Error("Exception Occured" + e);
             }
 

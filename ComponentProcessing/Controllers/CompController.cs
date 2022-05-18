@@ -38,21 +38,29 @@ namespace ComponentProcessing.Controllers
             obj.Quantity = Quantity;
             obj.IsPriorityRequest = IsPriorityRequest;
             // save process request
-            _bl.AddDataBL(obj, _context);
+           // _bl.AddDataBL(obj, _context);
             ProcRes pr_resp_obj =  _bl.ProcessResponsefromPD_MicroBL(obj,_context);
             //save process response
+            if (pr_resp_obj == null) { return BadRequest(); }
+            // save process req and reponse , if its a valid request
+            _bl.AddDataBL(obj, _context);
             _bl.AddDataProcessResponseBL(pr_resp_obj, _context);
             return Ok(pr_resp_obj);
             
-        } 
-
-     
-        [HttpPost]
-        public int CompleteProcessing([FromBody] ProcRes value)
-        {
-          return _bl.PaymentBusiness(value, _context);
-            
         }
-        
+
+
+        [HttpPost]
+        public IActionResult CompleteProcessing([FromBody] ProcRes value)
+        {
+            int balanceamt = _bl.PaymentBusiness(value, _context);
+            if (balanceamt == -500)
+            {
+                return BadRequest();
+            }
+            return Ok(balanceamt);
+
+        }
+
     }
 }
