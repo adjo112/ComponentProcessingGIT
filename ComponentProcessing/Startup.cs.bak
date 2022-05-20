@@ -33,21 +33,7 @@ namespace ComponentProcessing
         public void ConfigureServices(IServiceCollection services)
         {
 
-            
-			 services.AddCors(options =>
-            {
-                options.AddPolicy("AllowAll",
-                    builder =>
-                    {
-                        builder
-                        .AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader();
-                       
-                    });
-            });
-			
-			services.AddControllers();
+            services.AddControllers();
 
             services.AddDbContext<CompContext>(options =>
             {
@@ -101,8 +87,6 @@ namespace ComponentProcessing
            app.UseAuthentication();
 
             app.UseAuthorization();
-
-			 app.UseCors("AllowAll");
 
             app.UseEndpoints(endpoints =>
             {
