@@ -9,7 +9,7 @@ namespace ComponentProcessing.BL
 {
    public interface IBusinessL
     {
-        public void AddDataBL(ProcReq value, CompContext ct);
+        public CreditDetail AddDataBL(ProcReq value, CompContext ct);
 
         public ProcRes ProcessResponsefromPD_MicroBL(ProcReq value,CompContext ct);
 

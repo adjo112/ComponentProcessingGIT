@@ -52,26 +52,34 @@ namespace ComponentProcessing.DL
         
         
         
-        public void AddDataProcessRequestDL(ProcReq pq, CompContext ct)
+        public CreditDetail AddDataProcessRequestDL(ProcReq pq, CompContext ct)
         {
             try
             {
-                pq.OrderPlacedDate = DateTime.Now;
-                ct.ProcessRequest.Add(pq);
-                ct.SaveChanges();
+               // pq.OrderPlacedDate = DateTime.Now;
+               // ct.ProcessRequest.Add(pq);
+               // ct.SaveChanges();
 
                 var testcred = ct.CredDetails;
                 CreditDetail cd = testcred.Find(pq.CreditCardNumber);
-                if (cd == null)
+                if (cd != null)
                 {
-                    CreditDetail obj = new CreditDetail();
-                    obj.CreditcardNo = pq.CreditCardNumber;
-                    obj.Creditlimit = 20000;
-                    ct.CredDetails.Add(obj);
+                    pq.OrderPlacedDate = DateTime.Now;
+                    ct.ProcessRequest.Add(pq);
                     ct.SaveChanges();
+                    return new CreditDetail();
+                    // CreditDetail obj = new CreditDetail();
+                    // obj.CreditcardNo = pq.CreditCardNumber;
+                    // obj.Creditlimit = 20000;
+                    // ct.CredDetails.Add(obj);
+                    //  ct.SaveChanges();
                 }
+                else {
+                    return null;
+                }
+                
             }
-            catch (Exception e) { }
+            catch (Exception e) { return null; }
         }
 
         public void AddDataProcessResponseDL(ProcRes pq, CompContext ct)

@@ -43,7 +43,8 @@ namespace ComponentProcessing.Controllers
             //save process response
             if (pr_resp_obj == null) { return BadRequest(); }
             // save process req and reponse , if its a valid request
-            _bl.AddDataBL(obj, _context);
+            CreditDetail creditobj = _bl.AddDataBL(obj, _context);
+            if (creditobj == null) { return BadRequest(); }
             _bl.AddDataProcessResponseBL(pr_resp_obj, _context);
             return Ok(pr_resp_obj);
             

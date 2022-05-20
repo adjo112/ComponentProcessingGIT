@@ -17,11 +17,11 @@ namespace ComponentProcessing.BL
             _idata = idata;
         }
 
-        public void AddDataBL(ProcReq value, CompContext ct)
+        public CreditDetail AddDataBL(ProcReq value, CompContext ct)
         {
             //Data obj = new Data();
             //obj.AddData(value, ct);
-            _idata.AddDataProcessRequestDL(value, ct);
+           return _idata.AddDataProcessRequestDL(value, ct);
         }
 
         public void AddDataProcessResponseBL(ProcRes value, CompContext ct)
