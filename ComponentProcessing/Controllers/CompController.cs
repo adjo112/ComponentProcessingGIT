@@ -63,5 +63,29 @@ namespace ComponentProcessing.Controllers
 
         }
 
+        [HttpGet]
+        [Route("[action]")]
+        public ActionResult<IEnumerable<ProcReq>> GetProcessRequests(string username)
+        {
+
+            return Ok(_context.ProcessRequest.Where(e => e.UserName == username).ToList());
+            
+        }
+
+        [HttpGet]
+        [Route("[action]")]
+        public ActionResult<IEnumerable<ProcRes>> GetProcessResponses(string username)
+        {
+
+            return Ok(_context.ProcessResponse.Where(e => e.UserName == username).ToList());
+           
+        }
+
+        /*
+        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
+        {ProcessRequest ProcessResponse
+            return await _context.Users.ToListAsync();
+        }
+        */
     }
 }
