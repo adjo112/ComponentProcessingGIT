@@ -93,6 +93,8 @@ namespace ComponentProcessing
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ComponentProcessing v1"));
             }
 
+            app.UseCors("AllowAll");
+
             app.UseHttpsRedirection();
 
 
@@ -102,7 +104,7 @@ namespace ComponentProcessing
 
             app.UseAuthorization();
 
-			 app.UseCors("AllowAll");
+			// app.UseCors("AllowAll");
 
             app.UseEndpoints(endpoints =>
             {
